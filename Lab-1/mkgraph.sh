@@ -21,7 +21,4 @@ set tmargin 2
 set mxtics
 
 set output './result/result_1.png'
-plot "./result/1.dat" using 1:2 title "one" with linespoints ls 1,\
-     "./result/1.dat" using 1:3 title "two" with linespoints ls 2,\
-     "./result/1.dat" using 1:4 title "three" with linespoints ls 3,\
-     "./result/1.dat" using 1:5 title "four" with linespoints ls 4
+plot for [col=2:5] './result/1.dat' using 1:col with linespoints ls col-1
