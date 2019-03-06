@@ -48,17 +48,19 @@ int main(int argc, char* argv[])
 	double lambda = 0.00001;
 	int N = 65536;
 	int m = 1;
-	FILE* f_out = fopen("./result/1.txt", "w");
+
+	FILE* f_out = fopen("./result/1.dat", "w");
 	if (f_out) {
-		for (int mu = 1; mu != 10000; mu *= 10) {
-			for (int n = 65527; n <= N; ++n)
-				fprintf(f_out, "%.6f\n",Theta(lambda, mu, n, N, m));
+		for (int n = 65527; n <= N; ++n) {
+			fprintf(f_out, "%d    ", n);
+			for (int mu = 1; mu != 10000; mu *= 10)
+				fprintf(f_out, "%.6f    ", Theta(lambda, mu, n, N, m));
 			fprintf(f_out, "\n");
 		}
 		fclose(f_out);
 	}
 
-	f_out = fopen("./result/2.txt", "w");
+	f_out = fopen("./result/2.dat", "w");
 	double mu = 1.0;
 	if (f_out) {
 		for (int i = -5; i >= -9; --i) {
@@ -69,7 +71,7 @@ int main(int argc, char* argv[])
 		fclose(f_out);
 	}
 
-	f_out = fopen("./result/3.txt", "w");
+	f_out = fopen("./result/3.dat", "w");
 	lambda = 0.00001;
 	if (f_out) {
 		for (int i = 1; i <= 4; ++i) {
@@ -80,7 +82,7 @@ int main(int argc, char* argv[])
 		fclose(f_out);
 	}
 
-	f_out = fopen("./result/4.txt", "w");
+	f_out = fopen("./result/4.dat", "w");
 	lambda = 0.001;
 	N = 1000;
 	int mus[] = { 1, 2, 4, 6 };
@@ -93,7 +95,7 @@ int main(int argc, char* argv[])
 		fclose(f_out);
 	}
 
-	f_out = fopen("./result/5.txt", "w");
+	f_out = fopen("./result/5.dat", "w");
 	mu = 1.0;
 	N = 8192;
 	if (f_out) {
@@ -105,7 +107,7 @@ int main(int argc, char* argv[])
 		fclose(f_out);
 	}
 
-	f_out = fopen("./result/6.txt", "w");
+	f_out = fopen("./result/6.dat", "w");
 	lambda = 0.00001;
 	N = 8202;
 	N = 8192;
