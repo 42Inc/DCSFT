@@ -13,7 +13,7 @@ set mytics 1
 set format x "%.0f"
 set xlabel "Number n of elementary machines in base subsystem" font "Arial, 16"
 set format y "%.0f"
-set yrange [0:300000]
+set yrange [0:*]
 set logscale y
 set ylabel "Mean time between failures" font "Arial, 16"
 set xtics font "Arial, 10"
