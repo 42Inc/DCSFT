@@ -1,5 +1,13 @@
 #include "../include/extralib.h"
 
+int rejection_func() {
+  return;
+}
+
+int recovery_func() {
+  return;
+}
+
 int probability(int i) {
   double P = 2;
   return P;
