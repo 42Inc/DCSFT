@@ -5,6 +5,7 @@ set style line 1 linetype 1 linewidth 2 linecolor rgb 'red'
 set style line 2 linetype 1 linewidth 2 linecolor rgb 'blue'
 set style line 3 linetype 1 linewidth 2 linecolor rgb 'green'
 set style line 4 linetype 1 linewidth 2 linecolor rgb 'yellow'
+set style line 5 linetype 1 linewidth 2 linecolor rgb 'pink'
 
 set border linewidth 1
 set key top right
@@ -23,19 +24,19 @@ set tmargin 2
 set mxtics
 
 set output './result/result_1.png'
-plot for [col=2:5] './result/1.dat' using 1:col with linespoints ls col-1
+plot for [col=2:5] './result/1.dat' using 1:col with linespoints ls col-1 title columnheader(col)
 
 set output './result/result_2.png'
-plot for [col=2:5] './result/2.dat' using 1:col with linespoints ls col-1
+plot for [col=2:6] './result/2.dat' using 1:col with linespoints ls col-1 title columnheader(col)
 
 set output './result/result_3.png'
-plot for [col=2:5] './result/3.dat' using 1:col with linespoints ls col-1
+plot for [col=2:5] './result/3.dat' using 1:col with linespoints ls col-1 title columnheader(col)
 
 set output './result/result_4.png'
-plot for [col=2:5] './result/4.dat' using 1:col with linespoints ls col-1
+plot for [col=2:5] './result/4.dat' using 1:col with linespoints ls col-1 title columnheader(col)
 
 set output './result/result_5.png'
-plot for [col=2:5] './result/5.dat' using 1:col with linespoints ls col-1
+plot for [col=2:6] './result/5.dat' using 1:col with linespoints ls col-1 title columnheader(col)
 
 set output './result/result_6.png'
-plot for [col=2:5] './result/6.dat' using 1:col with linespoints ls col-1
+plot for [col=2:5] './result/6.dat' using 1:col with linespoints ls col-1 title columnheader(col)
