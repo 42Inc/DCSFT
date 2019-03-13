@@ -11,11 +11,11 @@ set border linewidth 1
 set key top right
 set grid
 set mytics 1
-set format x "%.0f"
+set format x "%.2f"
 set xlabel "Number n of elementary machines in base subsystem" font "Arial, 16"
-set format y "%.0f"
+set format y "%.2f"
 set yrange [0:*]
-set logscale y
+set logscale y    #Ruins everything with it or not, desu
 set ylabel "Mean time between failures" font "Arial, 16"
 set xtics font "Arial, 10"
 set ytics font "Arial, 10"
