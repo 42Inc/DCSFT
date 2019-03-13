@@ -11,7 +11,7 @@ INCLUDES = -I $(SRC_DIR)
 DIRS = $(BIN_DIR) $(OBJ_DIR) result
 OBJ = $(OBJ_DIR)/reliability.o $(OBJ_DIR)/extralib.o
 
-.PHONY: all bins objs clean rebuild
+.PHONY: all bins objs clean rebuild exec
 all: bins
 
 bins: $(DIRS) objs
@@ -29,3 +29,6 @@ clean:
 
 rebuild:
 	make clean ; make
+
+exec:
+	make clean ; make ; ./$(BIN_DIR)/cmpl ; ./mkgraph.sh
