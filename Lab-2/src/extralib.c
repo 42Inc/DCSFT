@@ -3,7 +3,8 @@
 ulong Fact(int x) {
   ulong fac = 1;
   for (uint i = 2; i <= x; i++)
-  fac *= i;
+    fac *= i;
+
   return fac;
 }
 
@@ -13,6 +14,7 @@ double P(int j, double mu, double lambda, int N) {
     sum += pow(mu / lambda, l) / Fact(l);
   sum = 1 / sum;
   sum *= pow(mu / lambda, j) / Fact(j);
+
   return sum;
 }
 
@@ -23,6 +25,7 @@ int Delta(int x) {
 double U(double mu, int t, int N, int m, int l, int i) {
   double u = pow(mu * t, l) / Fact(l);
   u *= Delta(N - i - m) * pow(m, l) * exp(-m * mu * t) + Delta(m - N + i) * pow(N - i, l) * exp(-(N - i) * mu * t);
+
   return u;
 }
 
@@ -40,6 +43,7 @@ double Q(int i, int n, int t, int m, int N, double mu, double lambda) {
       sum_Pi += Pi(t, lambda, r, i);
     sum += sum_u * sum_Pi;
   }
+
   return sum;
 }
 
@@ -62,6 +66,7 @@ double R_(int n, int N, double mu, double lambda, int t) {
       sum2 += Pi(t, lambda, r, i);
     sum *= sum2;
   }
+
   return sum;
 }
 
@@ -76,6 +81,7 @@ double Q_(int n, int N, int m, double mu, double lambda, int t) {
       sum2 += U(mu, t, N, m, l, i);
     sum *= sum2;
   }
+
   return 1 - sum;
 }
 
@@ -83,5 +89,6 @@ double S(int n, int m, double mu, double lambda) {
   double sum = 0;
   for (int j = 0; j <= n - 1; j++)
     sum += pow(m * mu / lambda, j) * exp(-m * mu / lambda) / Fact(j);
+
   return 1 - sum;
 }
