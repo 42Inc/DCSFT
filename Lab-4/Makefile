@@ -9,7 +9,7 @@ OBJ_DIR = obj
 BIN_DIR = bin
 INCLUDES = -I $(SRC_DIR)
 DIRS = $(BIN_DIR) $(OBJ_DIR) result
-OBJ = $(OBJ_DIR)/algorithm.o $(OBJ_DIR)/extralib.o
+OBJ = $(OBJ_DIR)/2Dpacking.o $(OBJ_DIR)/extralib.o
 
 .PHONY: all bins objs clean rebuild exec
 all: bins
@@ -21,7 +21,7 @@ $(DIRS):
 	$(QUIET)mkdir $(DIRS)
 
 objs:
-	$(CC) $(OFLAGS) $(SRC_DIR)/algorithm.c -o $(OBJ_DIR)/algorithm.o $(INCLUDES)
+	$(CC) $(OFLAGS) $(SRC_DIR)/2Dpacking.c -o $(OBJ_DIR)/2Dpacking.o $(INCLUDES)
 	$(CC) $(OFLAGS) $(SRC_DIR)/extralib.c -o $(OBJ_DIR)/extralib.o $(INCLUDES)
 
 clean:
@@ -29,6 +29,6 @@ clean:
 
 rebuild:
 	make clean ; make
-	
+
 exec:
 	make clean ; make ; ./bin/cmpl ; ./mkgraph.sh

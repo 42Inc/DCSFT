@@ -6,6 +6,9 @@
 #include <string.h>
 #include <math.h>
 
-
+int NFDH();
+int FFDH();
+int countingSort();
+int binaryHear();
 
 #endif
