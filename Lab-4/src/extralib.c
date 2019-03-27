@@ -1,17 +1,17 @@
 #include "../include/extralib.h"
 
-int NFDH() {
+void NFDH() {
 
 }
 
-int FFDH() {
+void FFDH() {
 
 }
 
-int countingSort() {
+void countingSort(int *input_arr[], int length) {
 
 }
 
-int binaryHear() {
+void binaryHear() {
 
 }

@@ -6,9 +6,11 @@
 #include <string.h>
 #include <math.h>
 
-int NFDH();
-int FFDH();
-int countingSort();
-int binaryHear();
+#define RANGE 32
+
+void NFDH();
+void FFDH();
+void countingSort(int *input_arr[], int length);
+void binaryHear();
 
 #endif
