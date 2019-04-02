@@ -16,7 +16,10 @@ int main(int argc, char *argv[]) {
   char* TDSP_method = argv[2];
   int n = atoi(argv[3]);
   int tasks_amount = 0;
-  int list_of_tasks[2][RANGE];
+
+  int *list_of_tasks[2];
+  list_of_tasks[0] = (int*)malloc(RANGE * sizeof(int));
+  list_of_tasks[1] = (int*)malloc(RANGE * sizeof(int));
 
   FILE* fd_in = fopen(filename, "r");
   if (fd_in) {
@@ -36,10 +39,10 @@ int main(int argc, char *argv[]) {
   }
 
   if (strcmp(TDSP_method, "NFDH") == 0) {
-    printf("%s[SYSTEM]%s  For tasks from %s%s%s and %s%d%s EM has been applied %s%s%s method...%s\n", YELLOW, WHITE, GREEN, filename, WHITE, GREEN, n, WHITE, GREEN, TDSP_method, WHITE, RESET);
+    printf("%s[SYSTEM]%s  For %s%d%s tasks from %s%s%s and %s%d%s EM has been applied %s%s%s method...%s\n", YELLOW, WHITE, GREEN, tasks_amount, WHITE, GREEN, filename, WHITE, GREEN, n, WHITE, GREEN, TDSP_method, WHITE, RESET);
     NFDH(list_of_tasks, tasks_amount, n);
   } else if (strcmp(TDSP_method, "FFDH") == 0) {
-    printf("%s[SYSTEM]%s  For tasks from %s%s%s and %s%d%s EM has been applied %s%s%s method...%s\n", YELLOW, WHITE, GREEN, filename, WHITE, GREEN, n, WHITE, GREEN, TDSP_method, WHITE, RESET);
+    printf("%s[SYSTEM]%s  For %s%d%s tasks from %s%s%s and %s%d%s EM has been applied %s%s%s method...%s\n", YELLOW, WHITE, GREEN, tasks_amount, WHITE, GREEN, filename, WHITE, GREEN, n, WHITE, GREEN, TDSP_method, WHITE, RESET);
     FFDH(list_of_tasks, tasks_amount, n);
   } else {
     fprintf(stderr, "%s[ERROR]%s  Unknown method for use!%s\n", RED, YELLOW, RESET);

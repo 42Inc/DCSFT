@@ -8,9 +8,9 @@
 
 #define RANGE 32
 
-void NFDH();
+void NFDH(int **input_arr, int length, int n_machines);
 void FFDH();
-void countingSort(int *input_arr[], int length);
+void countingSort(int **input_arr, int length);
 void binaryHear();
 
 #endif
