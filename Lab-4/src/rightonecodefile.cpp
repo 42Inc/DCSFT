@@ -193,12 +193,12 @@ int main(int argc, char* argv[]) {
 	unsigned int endTime =  clock() - startTime;
 	e = (TS - Tsh)/Tsh;
 
-	cout << m << " " << endTime/1000.0 << endl;
+	cout << m << " " << TS << endl;
 	startTime = clock();
 	TS = FFDH_Compute(root);
 	endTime = clock() - startTime;
 	e = (TS - Tsh)/Tsh;
-	cout << m << " " << endTime/1000.0 << endl;
+	cout << m << " " << TS << endl;
 	fin.close();
 	return 0;
 }
